@@ -174,7 +174,8 @@ function conectarEventos() {
     const b = e.target.closest('[data-filtro]');
     if (!b) return;
     estado.perfil = b.dataset.filtro;
-    renderFiltros();
+    // Solo se actualiza aria-pressed: re-renderizar los botones destruiría el que tiene el foco.
+    for (const f of $$('[data-filtro]')) f.setAttribute('aria-pressed', String(f === b));
     renderProyectos();
   });
   const filas = $('#filas');

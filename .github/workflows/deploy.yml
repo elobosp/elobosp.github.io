@@ -9,10 +9,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   build:
     name: test · validar · construir
@@ -46,6 +42,7 @@ jobs:
             --no-progress
             --root-dir ${{ github.workspace }}/_site
             --exclude '^https://(www\.)?linkedin\.com'
+            --exclude '^https://elobosp\.github\.io'
             --exclude '^mailto:'
             --accept '200,429'
             '_site/**/*.html'
@@ -84,6 +81,10 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    # concurrencia solo en el deploy: un PR no puede cancelar un despliegue de main en cola
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write

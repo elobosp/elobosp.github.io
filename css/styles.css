@@ -17,6 +17,8 @@
 }
 
 /* ---------- base ---------- */
+/* hidden siempre oculta, aunque una clase fije display (p. ej. .boton). .deploy-info reserva su línea. */
+[hidden]:not(.deploy-info) { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
