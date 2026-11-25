@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 152" role="img" aria-labelledby="t-chatbot-admision">
+  <title id="t-chatbot-admision">Arquitectura: Chatbot de admisión con LLM</title>
+  <defs><marker id="m-chatbot-admision" class="flecha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
+  <line class="arista" x1="169.0" y1="39.0" x2="188.0" y2="39.0" marker-end="url(#m-chatbot-admision)"/>
+  <line class="arista" x1="152.5" y1="87.0" x2="204.5" y2="65.0" marker-end="url(#m-chatbot-admision)"/>
+  <line class="arista" x1="344.0" y1="39.0" x2="363.0" y2="39.0" marker-end="url(#m-chatbot-admision)"/>
+  <line class="arista" x1="327.5" y1="65.0" x2="379.5" y2="87.0" marker-end="url(#m-chatbot-admision)"/>
+  <line class="arista arista--sec" x1="266.0" y1="65.0" x2="266.0" y2="87.0" marker-end="url(#m-chatbot-admision)"/>
+  <g><rect class="nodo" x="16" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="36" text-anchor="middle">Widget web</text><text class="etiqueta etiqueta--sec" x="91" y="51" text-anchor="middle">sitio</text></g>
+  <g><rect class="nodo" x="16" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="110" text-anchor="middle">WhatsApp</text><text class="etiqueta etiqueta--sec" x="91" y="125" text-anchor="middle">Cloud API</text></g>
+  <g><rect class="nodo nodo--principal" x="191" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="36" text-anchor="middle">n8n</text><text class="etiqueta etiqueta--sec" x="266" y="51" text-anchor="middle">antes: backend Go</text></g>
+  <g><rect class="nodo" x="191" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="110" text-anchor="middle">Consejero</text><text class="etiqueta etiqueta--sec" x="266" y="125" text-anchor="middle">traspaso a humano</text></g>
+  <g><rect class="nodo" x="366" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="36" text-anchor="middle">LLM</text><text class="etiqueta etiqueta--sec" x="441" y="51" text-anchor="middle">Ollama</text></g>
+  <g><rect class="nodo" x="366" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="110" text-anchor="middle">Base de conocimiento</text><text class="etiqueta etiqueta--sec" x="441" y="125" text-anchor="middle">oferta académica</text></g>
+</svg>

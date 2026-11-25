@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 882 226" role="img" aria-labelledby="t-agenda-k8s">
+  <title id="t-agenda-k8s">Arquitectura: CI/CD de punta a punta a Kubernetes</title>
+  <defs><marker id="m-agenda-k8s" class="flecha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
+  <line class="arista" x1="152.5" y1="87.0" x2="204.5" y2="65.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista" x1="152.5" y1="139.0" x2="204.5" y2="161.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista" x1="344.0" y1="39.0" x2="363.0" y2="39.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista" x1="344.0" y1="187.0" x2="363.0" y2="187.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista arista--sec" x1="502.5" y1="65.0" x2="554.5" y2="87.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista arista--sec" x1="502.5" y1="161.0" x2="554.5" y2="139.0" marker-end="url(#m-agenda-k8s)"/>
+  <line class="arista" x1="694.0" y1="113.0" x2="713.0" y2="113.0" marker-end="url(#m-agenda-k8s)"/>
+  <text class="etiqueta etiqueta--arista" x="703.5" y="108.0" text-anchor="middle">deploy</text>
+  <g><rect class="nodo" x="16" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="110" text-anchor="middle">git push</text><text class="etiqueta etiqueta--sec" x="91" y="125" text-anchor="middle">main</text></g>
+  <g><rect class="nodo" x="191" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="36" text-anchor="middle">GitHub Actions</text><text class="etiqueta etiqueta--sec" x="266" y="51" text-anchor="middle">build + push</text></g>
+  <g><rect class="nodo" x="191" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="184" text-anchor="middle">GitLab CI</text><text class="etiqueta etiqueta--sec" x="266" y="199" text-anchor="middle">build + push</text></g>
+  <g><rect class="nodo" x="366" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="36" text-anchor="middle">Docker Hub</text><text class="etiqueta etiqueta--sec" x="441" y="51" text-anchor="middle">imagen:sha</text></g>
+  <g><rect class="nodo" x="366" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="184" text-anchor="middle">Registry</text><text class="etiqueta etiqueta--sec" x="441" y="199" text-anchor="middle">imagen:sha</text></g>
+  <g><rect class="nodo nodo--principal" x="541" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="616" y="110" text-anchor="middle">Runner self-hosted</text><text class="etiqueta etiqueta--sec" x="616" y="125" text-anchor="middle">kubectl</text></g>
+  <g><rect class="nodo nodo--principal" x="716" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="791" y="110" text-anchor="middle">Kubernetes</text><text class="etiqueta etiqueta--sec" x="791" y="125" text-anchor="middle">API Go</text></g>
+</svg>
