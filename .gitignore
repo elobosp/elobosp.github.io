@@ -1,0 +1,6 @@
+.superpowers/
+docs/
+.playwright-cli/
+graphify-out/
+latex/
+node_modules/
