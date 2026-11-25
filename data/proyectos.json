@@ -1,0 +1,354 @@
+[
+  {
+    "slug": "indicadores-admision",
+    "nombre": "indicadores-admision",
+    "perfiles": ["backend", "fullstack"],
+    "estado": "prod",
+    "stack": ["go", "gin", "react", "keycloak"],
+    "commits": 35,
+    "diagrama": "assets/diagramas/indicadores-admision.svg",
+    "titulo": { "es": "Dashboard de indicadores de admisión", "en": "Admissions KPI dashboard" },
+    "problema": {
+      "es": "El área de admisión necesitaba ver los indicadores de matrícula en un solo lugar, con acceso restringido al personal autorizado y sin que la aplicación manejara contraseñas.",
+      "en": "The admissions office needed enrollment KPIs in one place, restricted to authorized staff, without the application ever handling passwords."
+    },
+    "solucion": {
+      "es": "API en Go (Gin) que expone los indicadores y ejecuta en el backend todo el login SSO contra Keycloak (OAuth 2.0 Authorization Code + PKCE), reemplazando el login LDAP anterior. La sesión vive en una cookie httpOnly y la autorización por rol se mantiene en la base de seguridad existente. Frontend React/Vite instalable como PWA.",
+      "en": "Go (Gin) API that serves the KPIs and runs the whole SSO login against Keycloak on the backend (OAuth 2.0 Authorization Code + PKCE), replacing the previous LDAP login. The session lives in an httpOnly cookie and role-based authorization stays in the existing security database. React/Vite frontend installable as a PWA."
+    },
+    "resultado": {
+      "es": "Dashboard en producción con inicio de sesión institucional único: la app nunca ve la contraseña y no guarda tokens en el navegador.",
+      "en": "Dashboard in production with institutional single sign-on: the app never sees the password and stores no tokens in the browser."
+    }
+  },
+  {
+    "slug": "portal-estudiantes",
+    "nombre": "portal-estudiantes",
+    "perfiles": ["fullstack", "devops"],
+    "estado": "prod",
+    "stack": ["react", "php", "lumen", "webauthn", "gitlab-ci"],
+    "commits": 175,
+    "diagrama": "assets/diagramas/portal-estudiantes.svg",
+    "titulo": { "es": "Portal de estudiantes", "en": "Student portal" },
+    "problema": {
+      "es": "Los estudiantes necesitan consultar notas, perfil, toma de ramos y trámites desde el celular, con un acceso seguro y cómodo.",
+      "en": "Students need to check grades, profile, course enrollment and requests from their phones, with secure and convenient access."
+    },
+    "solucion": {
+      "es": "Desarrollo de módulos en la PWA (React 19) y en la API (PHP/Lumen con JWT). Implementé un login biométrico WebAuthn/FIDO2 (Face ID, Touch ID, huella) con la verificación CBOR/COSE y de firmas ES256/RS256 escrita a mano sobre OpenSSL, sin dependencias externas. Despliegue continuo con GitLab CI/CD en tres ambientes con runners dedicados.",
+      "en": "Built modules for the PWA (React 19) and the API (PHP/Lumen with JWT). Implemented a WebAuthn/FIDO2 biometric login (Face ID, Touch ID, fingerprint) with CBOR/COSE parsing and ES256/RS256 signature verification written from scratch on top of OpenSSL, with no external dependencies. Continuous delivery with GitLab CI/CD to three environments with dedicated runners."
+    },
+    "resultado": {
+      "es": "Portal en producción para los estudiantes de la universidad; cada rama se despliega automáticamente a su ambiente (desarrollo, pruebas, producción).",
+      "en": "Portal in production for the university's students; each branch deploys automatically to its environment (dev, test, production)."
+    }
+  },
+  {
+    "slug": "credencial-digital",
+    "nombre": "credencial-digital",
+    "perfiles": ["backend", "fullstack"],
+    "estado": "prod",
+    "stack": ["react-native", "expo", "typescript", "go", "jwt"],
+    "commits": 151,
+    "diagrama": "assets/diagramas/credencial-digital.svg",
+    "titulo": { "es": "Credencial universitaria digital", "en": "Digital student ID" },
+    "problema": {
+      "es": "Los estudiantes necesitaban llevar su credencial universitaria en el celular, con un código verificable.",
+      "en": "Students needed to carry their university ID on their phones, with a verifiable code."
+    },
+    "solucion": {
+      "es": "App móvil en React Native/Expo con TypeScript para Android e iOS (builds con EAS) y API en Go que autentica con JWT, entrega los datos del estudiante y genera el código de barras de la credencial.",
+      "en": "React Native/Expo mobile app in TypeScript for Android and iOS (EAS builds) and a Go API that authenticates with JWT, serves student data and generates the ID barcode."
+    },
+    "resultado": {
+      "es": "App para Android e iOS en su versión 1.3, respaldada por una API en producción.",
+      "en": "Android and iOS app at version 1.3, backed by an API in production."
+    }
+  },
+  {
+    "slug": "api-fotografias",
+    "nombre": "api-fotografias",
+    "perfiles": ["backend", "ia"],
+    "estado": "prod",
+    "stack": ["go", "python", "yolov8", "opencv", "docker"],
+    "commits": 22,
+    "diagrama": "assets/diagramas/api-fotografias.svg",
+    "titulo": { "es": "API de procesamiento de fotografías", "en": "Photo processing API" },
+    "problema": {
+      "es": "Las fotos que suben los estudiantes para su credencial llegan con fondos y encuadres distintos.",
+      "en": "Photos students upload for their ID arrive with inconsistent backgrounds and framing."
+    },
+    "solucion": {
+      "es": "API REST en Go (Gorilla Mux) que recibe la imagen en base64 y delega el procesamiento a Python: detección de rostro con YOLOv8 y reemplazo de fondo con OpenCV. Contenerizada con Docker y health checks.",
+      "en": "Go REST API (Gorilla Mux) that receives the image in base64 and delegates processing to Python: face detection with YOLOv8 and background replacement with OpenCV. Containerized with Docker and health checks."
+    },
+    "resultado": {
+      "es": "Fotos normalizadas automáticamente, con el rostro detectado y fondo uniforme, listas para la credencial.",
+      "en": "Photos normalized automatically, with the face detected and a uniform background, ready for the ID."
+    }
+  },
+  {
+    "slug": "rpa-python",
+    "nombre": "rpa-python",
+    "perfiles": ["backend"],
+    "estado": "prod",
+    "stack": ["python", "selenium", "pandas", "openpyxl"],
+    "commits": 25,
+    "diagrama": "assets/diagramas/rpa-python.svg",
+    "titulo": { "es": "Robots RPA en Python", "en": "Python RPA bots" },
+    "problema": {
+      "es": "Procesos administrativos repetitivos de finanzas, personas y convenios dependían de una plataforma RPA propietaria.",
+      "en": "Repetitive administrative processes in finance, HR and agreements depended on a proprietary RPA platform."
+    },
+    "solucion": {
+      "es": "Lideré la migración de los robots desde Laiye a Python: automatización web con Selenium y procesamiento de planillas Excel con pandas (xls) y openpyxl (xlsx).",
+      "en": "Led the migration of the bots from Laiye to Python: web automation with Selenium and Excel processing with pandas (xls) and openpyxl (xlsx)."
+    },
+    "resultado": {
+      "es": "15 robots en Python que cubren procesos de finanzas, gestión de personas y documentos, sin depender de licencias propietarias.",
+      "en": "15 Python bots covering finance, HR and document processes, with no dependency on proprietary licenses."
+    }
+  },
+  {
+    "slug": "quevotan",
+    "nombre": "quevotan",
+    "perfiles": ["backend"],
+    "estado": "prod",
+    "stack": ["go", "sql", "docker-compose"],
+    "commits": null,
+    "diagrama": "assets/diagramas/quevotan.svg",
+    "titulo": { "es": "QueVotan.cl (2021)", "en": "QueVotan.cl (2021)" },
+    "problema": {
+      "es": "La plataforma para analizar las votaciones de la Cámara de Diputados tenía un backend en Python con tiempos de consulta altos y un despliegue complejo.",
+      "en": "The platform for analyzing votes in the Chilean Chamber of Deputies had a Python backend with slow queries and a complex deployment."
+    },
+    "solucion": {
+      "es": "Lideré la reescritura del backend en Go, reestructuré la base de datos e indexé sus tablas principales, y empaqueté todos los componentes con Docker Compose.",
+      "en": "Led the backend rewrite in Go, restructured the database and indexed its main tables, and packaged every component with Docker Compose."
+    },
+    "resultado": {
+      "es": "Consultas más rápidas y despliegue en un solo paso. El trabajo derivó en mi tesis y en una publicación IEEE (SCCC 2023).",
+      "en": "Faster queries and one-step deployment. The work became my thesis and an IEEE publication (SCCC 2023)."
+    }
+  },
+  {
+    "slug": "portal-microservicios",
+    "nombre": "portal-microservicios",
+    "perfiles": ["backend", "devops"],
+    "estado": "lab",
+    "stack": ["go", "kubernetes", "helm", "module-federation"],
+    "commits": null,
+    "diagrama": "assets/diagramas/portal-microservicios.svg",
+    "titulo": { "es": "Migración del portal a microservicios", "en": "Student portal migration to microservices" },
+    "problema": {
+      "es": "El portal de estudiantes es un monolito: un pico de carga, como el de la inscripción de cursos, afecta a todo el sitio, y cada cambio obliga a desplegarlo completo.",
+      "en": "The student portal is a monolith: a load spike, such as course enrollment, affects the whole site, and every change requires a full deployment."
+    },
+    "solucion": {
+      "es": "Diseñé la migración a 10 servicios en Go (autenticación, notas, inscripción, biblioteca, entre otros) y un frontend modular con Module Federation (shell + 9 módulos) servido por un único Deployment de nginx. Despliegue con un chart de Helm y ruteo con Gateway API: /api/* va a cada servicio y el resto al frontend.",
+      "en": "Designed the migration to 10 Go services (auth, grades, enrollment, library, among others) and a modular frontend with Module Federation (shell + 9 modules) served by a single nginx Deployment. Deployed with a Helm chart and routed with the Gateway API: /api/* goes to each service, everything else to the frontend."
+    },
+    "resultado": {
+      "es": "Arquitectura en desarrollo que aísla la carga de la inscripción en su propio servicio y permite publicar cada módulo por separado.",
+      "en": "Architecture in progress that isolates enrollment load in its own service and lets each module ship independently."
+    }
+  },
+  {
+    "slug": "api-desercion",
+    "nombre": "api-desercion",
+    "perfiles": ["backend", "ia"],
+    "estado": "lab",
+    "stack": ["go", "lightgbm", "docker"],
+    "commits": null,
+    "diagrama": "assets/diagramas/api-desercion.svg",
+    "titulo": { "es": "Predicción de deserción estudiantil", "en": "Student dropout prediction" },
+    "problema": {
+      "es": "Detectar a tiempo a los estudiantes con riesgo de abandonar su carrera.",
+      "en": "Identify students at risk of dropping out early enough to act."
+    },
+    "solucion": {
+      "es": "Servicio en Go que sirve un modelo LightGBM entrenado con datos históricos organizados como un panel por alumno y semestre. Expone predicción individual y por lote, y acompaña cada resultado con una señal de confiabilidad sobre los datos de entrada.",
+      "en": "Go service that serves a LightGBM model trained on historical data structured as a per-student, per-semester panel. It offers single and batch predictions and attaches a reliability signal about the input data to each result."
+    },
+    "resultado": {
+      "es": "Probabilidad de deserción en porcentaje por estudiante, lista para integrarse en un sistema de alerta temprana.",
+      "en": "Per-student dropout probability, ready to plug into an early-warning system."
+    }
+  },
+  {
+    "slug": "chatbot-admision",
+    "nombre": "chatbot-admision",
+    "perfiles": ["backend", "ia"],
+    "estado": "lab",
+    "stack": ["llm", "ollama", "go", "n8n", "whatsapp"],
+    "commits": null,
+    "diagrama": "assets/diagramas/chatbot-admision.svg",
+    "titulo": { "es": "Chatbot de admisión con LLM", "en": "LLM admissions chatbot" },
+    "problema": {
+      "es": "Las personas interesadas en estudiar consultan a cualquier hora por la web y WhatsApp, y el equipo de admisión no alcanza a responder todo al instante.",
+      "en": "Prospective students ask questions at any hour via the website and WhatsApp, and the admissions team can't answer everything instantly."
+    },
+    "solucion": {
+      "es": "Chatbot con LLM sobre una base de conocimiento de la oferta académica: primero un backend en Go con un modelo local en Ollama y luego migrado a flujos de n8n. Atiende el sitio web y WhatsApp, registra a los interesados y contempla el traspaso de la conversación a un consejero de admisión.",
+      "en": "LLM chatbot over a knowledge base of the academic programs: first a Go backend with a local model on Ollama, later migrated to n8n workflows. It serves the website and WhatsApp, records prospective students and supports handing the conversation over to an admissions advisor."
+    },
+    "resultado": {
+      "es": "Piloto que responde de punta a punta por WhatsApp y web y registra a los interesados.",
+      "en": "Pilot that answers end to end on WhatsApp and the web and records prospective students."
+    }
+  },
+  {
+    "slug": "rag-reglamento",
+    "nombre": "rag-reglamento",
+    "perfiles": ["ia"],
+    "estado": "lab",
+    "stack": ["python", "chromadb", "bm25", "ollama"],
+    "commits": 22,
+    "diagrama": "assets/diagramas/rag-reglamento.svg",
+    "titulo": { "es": "Asistente RAG de reglamentos", "en": "RAG assistant for academic regulations" },
+    "problema": {
+      "es": "Los estudiantes no encuentran respuestas en reglamentos y mallas extensos, y un chatbot genérico puede inventarlas.",
+      "en": "Students struggle to find answers in long regulations and curricula, and a generic chatbot may make them up."
+    },
+    "solucion": {
+      "es": "Asistente RAG con búsqueda híbrida (embeddings multilingües en ChromaDB + BM25) sobre los PDF oficiales. Elige la versión del reglamento según el año de ingreso, cita documento y página, y rechaza sin llamar al modelo cuando la relevancia queda bajo un umbral calibrado. El LLM es intercambiable: local en Ollama o Claude.",
+      "en": "RAG assistant with hybrid search (multilingual embeddings in ChromaDB + BM25) over the official PDFs. It picks the regulation version by enrollment year, cites document and page, and refuses without calling the model when relevance falls below a calibrated threshold. The LLM is swappable: local on Ollama or Claude."
+    },
+    "resultado": {
+      "es": "Respuestas verificables con su fuente; si la respuesta no está en los documentos lo dice, y un set de evaluación mide su comportamiento.",
+      "en": "Verifiable answers with their source; when the answer isn't in the documents it says so, and an evaluation set measures its behavior."
+    }
+  },
+  {
+    "slug": "agenda-k8s",
+    "nombre": "agenda-k8s",
+    "perfiles": ["devops", "backend"],
+    "estado": "lab",
+    "stack": ["go", "kubernetes", "github-actions", "gitlab-ci"],
+    "commits": 9,
+    "diagrama": "assets/diagramas/agenda-k8s.svg",
+    "titulo": { "es": "CI/CD de punta a punta a Kubernetes", "en": "End-to-end CI/CD to Kubernetes" },
+    "problema": {
+      "es": "Construir un flujo completo de entrega continua, del commit a un clúster Kubernetes, con dos plataformas de CI distintas.",
+      "en": "Build a full continuous delivery flow, from commit to a Kubernetes cluster, on two different CI platforms."
+    },
+    "solucion": {
+      "es": "API REST en Go con interfaz embebida (go:embed) en un solo binario y probes de liveness/readiness. Dos pipelines paralelos: GitHub Actions publica la imagen en Docker Hub y GitLab CI en su registry. Un runner self-hosted aplica los manifiestos y actualiza la imagen al SHA recién construido, porque el clúster no es accesible desde la nube.",
+      "en": "Go REST API with an embedded UI (go:embed) in a single binary and liveness/readiness probes. Two parallel pipelines: GitHub Actions pushes the image to Docker Hub and GitLab CI to its registry. A self-hosted runner applies the manifests and rolls the image to the freshly built SHA, because the cluster isn't reachable from the cloud."
+    },
+    "resultado": {
+      "es": "Cada push termina desplegado en el clúster con la imagen etiquetada por commit, en ambas plataformas de CI.",
+      "en": "Every push ends up deployed to the cluster with a commit-tagged image, on both CI platforms."
+    }
+  },
+  {
+    "slug": "k8s-go-postgres",
+    "nombre": "k8s-go-postgres",
+    "perfiles": ["devops"],
+    "estado": "lab",
+    "stack": ["go", "postgresql", "kubernetes", "hpa"],
+    "commits": null,
+    "diagrama": "assets/diagramas/k8s-go-postgres.svg",
+    "titulo": { "es": "Go + PostgreSQL con autoescalado en Kubernetes", "en": "Go + PostgreSQL with autoscaling on Kubernetes" },
+    "problema": {
+      "es": "Probar cómo escala y resiste fallas una API con base de datos dentro de Kubernetes.",
+      "en": "Test how an API with a database scales and survives failures inside Kubernetes."
+    },
+    "solucion": {
+      "es": "API en Go con un Deployment de 3 réplicas, HPA (autoscaling/v2) por CPU y por una métrica personalizada de requests por segundo, PostgreSQL en StatefulSet con volumen persistente, PodDisruptionBudget e Ingress Nginx opcional, sobre un clúster local de 3 nodos.",
+      "en": "Go API with a 3-replica Deployment, HPA (autoscaling/v2) on CPU and on a custom requests-per-second metric, PostgreSQL as a StatefulSet with a persistent volume, PodDisruptionBudget and optional Nginx Ingress, on a local 3-node cluster."
+    },
+    "resultado": {
+      "es": "Laboratorio reproducible de escalado y alta disponibilidad, con todos los manifiestos versionados.",
+      "en": "Reproducible lab for scaling and high availability, with every manifest under version control."
+    }
+  },
+  {
+    "slug": "equipo-ia",
+    "nombre": "equipo-ia",
+    "perfiles": ["ia"],
+    "estado": "lab",
+    "stack": ["claude-code", "subagentes", "hooks"],
+    "commits": 16,
+    "diagrama": "assets/diagramas/equipo-ia.svg",
+    "titulo": { "es": "Equipo de agentes de IA", "en": "AI agent team" },
+    "problema": {
+      "es": "Llevar un documento de requisitos (PRD) a código funcionando con agentes de IA sin perder control de calidad ni de seguridad.",
+      "en": "Turn a requirements document (PRD) into working code with AI agents without losing control over quality or security."
+    },
+    "solucion": {
+      "es": "Seis subagentes de Claude Code (orquestador, implementador, integrador, revisor, auditor y QA) que trabajan por sprints sobre un estado compartido. Incluye un modelo de amenaza explícito, con reglas que bloquean lectura de credenciales, red saliente y git push, y hooks de control.",
+      "en": "Six Claude Code subagents (orchestrator, implementer, integrator, reviewer, auditor and QA) working in sprints over shared state. It ships with an explicit threat model, rules that block credential reads, outbound network and git push, and control hooks."
+    },
+    "resultado": {
+      "es": "Un equipo reutilizable que se instala en cualquier proyecto y separa a quien construye de quien revisa.",
+      "en": "A reusable team that installs into any project and separates who builds from who reviews."
+    }
+  },
+  {
+    "slug": "grpc-go",
+    "nombre": "grpc-go",
+    "perfiles": ["backend"],
+    "estado": "lab",
+    "stack": ["go", "grpc", "protobuf", "buf"],
+    "commits": null,
+    "diagrama": "assets/diagramas/grpc-go.svg",
+    "titulo": { "es": "Los 4 patrones de gRPC en Go", "en": "The 4 gRPC patterns in Go" },
+    "problema": {
+      "es": "Dominar gRPC más allá del caso petición-respuesta.",
+      "en": "Master gRPC beyond plain request-response."
+    },
+    "solucion": {
+      "es": "Servidor y clientes en Go para los cuatro tipos de llamada: unary (usuarios), server streaming (precios), client streaming (métricas) y bidireccional (chat). Contratos .proto con código generado por buf y una guía de lo que viaja por HTTP/2.",
+      "en": "Go server and clients for the four call types: unary (users), server streaming (prices), client streaming (metrics) and bidirectional (chat). .proto contracts with buf-generated code and a guide to what travels over HTTP/2."
+    },
+    "resultado": {
+      "es": "Guía práctica en español con un ejemplo ejecutable por patrón.",
+      "en": "Hands-on guide in Spanish with a runnable example for each pattern."
+    }
+  },
+  {
+    "slug": "graphql-go",
+    "nombre": "graphql-go",
+    "perfiles": ["backend"],
+    "estado": "lab",
+    "stack": ["go", "gqlgen", "graphql", "sql-server"],
+    "commits": null,
+    "diagrama": "assets/diagramas/graphql-go.svg",
+    "titulo": { "es": "API GraphQL de indicadores", "en": "GraphQL KPI API" },
+    "problema": {
+      "es": "Exponer indicadores de matrícula y admisión con consultas flexibles para distintos tableros.",
+      "en": "Expose enrollment and admissions KPIs with flexible queries for different dashboards."
+    },
+    "solucion": {
+      "es": "API GraphQL en Go con gqlgen, cuyos resolvers ejecutan procedimientos almacenados en SQL Server, con pool de conexiones y apagado ordenado del servidor.",
+      "en": "GraphQL API in Go with gqlgen, whose resolvers call SQL Server stored procedures, with connection pooling and graceful shutdown."
+    },
+    "resultado": {
+      "es": "Un endpoint único donde cada tablero pide solo los campos que necesita.",
+      "en": "A single endpoint where each dashboard asks only for the fields it needs."
+    }
+  },
+  {
+    "slug": "simulador-horarios",
+    "nombre": "simulador-horarios",
+    "perfiles": ["backend"],
+    "estado": "lab",
+    "stack": ["c++", "cmake", "algoritmo-genetico"],
+    "commits": null,
+    "diagrama": "assets/diagramas/simulador-horarios.svg",
+    "titulo": { "es": "Asignación de salas con algoritmo genético", "en": "Room scheduling with a genetic algorithm" },
+    "problema": {
+      "es": "Asignar clases a salas y horarios sin choques es un problema combinatorio difícil de resolver a mano.",
+      "en": "Assigning classes to rooms and time slots without clashes is a combinatorial problem that is hard to solve by hand."
+    },
+    "solucion": {
+      "es": "Simulador en C++ con un algoritmo genético que minimiza penalizaciones por conflictos, clases sin asignar y salas en el campus incorrecto. Escenarios configurables en JSON y compilación con CMake.",
+      "en": "C++ simulator with a genetic algorithm that minimizes penalties for clashes, unassigned classes and rooms on the wrong campus. Scenarios configured in JSON and built with CMake."
+    },
+    "resultado": {
+      "es": "Propuestas de asignación con el detalle de cada penalización, para comparar escenarios.",
+      "en": "Scheduling proposals with a breakdown of every penalty, to compare scenarios."
+    }
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "proyectos": "Projects",
+    "trayectoria": "Experience",
+    "stack": "Stack",
+    "contacto": "Contact",
+    "idioma": "Language"
+  },
+  "hero": {
+    "disponible": "Open to remote opportunities",
+    "intro": "I build backends in Go and take them to production with Docker, Kubernetes and CI/CD. I also build React frontends and React Native apps, and bring in AI where it adds value.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "deploy": "last deploy"
+  },
+  "pipeline": {
+    "commit": "commit",
+    "build": "build",
+    "test": "test",
+    "deploy": "deploy",
+    "aria": "Deployment pipeline of this site"
+  },
+  "proyectos": {
+    "titulo": "Projects",
+    "comando": "kubectl get projects",
+    "ayuda": "Select a row to see its architecture and details.",
+    "nota": "Code for institutional projects is private; here I describe the problem, the solution and its architecture.",
+    "filtro": {
+      "etiqueta": "Filter by profile",
+      "todos": "All",
+      "backend": "Backend",
+      "fullstack": "Full-stack",
+      "devops": "DevOps",
+      "ia": "AI"
+    },
+    "col": {
+      "nombre": "NAME",
+      "stack": "STACK",
+      "estado": "STATUS",
+      "commits": "COMMITS"
+    }
+  },
+  "estado": {
+    "prod": "prod",
+    "lab": "lab",
+    "leyenda": "prod: in production at an employer · lab: personal project or experiment"
+  },
+  "proyecto": {
+    "problema": "Problem",
+    "solucion": "What I did",
+    "resultado": "Outcome"
+  },
+  "trayectoria": {
+    "titulo": "Experience"
+  },
+  "stack": {
+    "titulo": "Stack"
+  },
+  "formacion": {
+    "titulo": "Education",
+    "publicacion": "Publication"
+  },
+  "contacto": {
+    "titulo": "Contact",
+    "texto": "Hiring for a remote backend, full-stack or DevOps role? Get in touch."
+  },
+  "cv": {
+    "descargar": "Download CV",
+    "soloEspanol": "CV (Spanish)"
+  },
+  "meta": {
+    "title": "Eduardo Lobos · Backend Engineer",
+    "description": "Portfolio of Eduardo Lobos: Go backends, Kubernetes and CI/CD, full-stack with React and React Native, and applied AI. Open to remote opportunities."
+  },
+  "noscript": "This site needs JavaScript to show the projects. You can reach me by email, LinkedIn or GitHub."
+}

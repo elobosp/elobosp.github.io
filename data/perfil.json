@@ -1,0 +1,71 @@
+{
+  "nombre": "Eduardo Lobos",
+  "titular": "Backend Engineer · Go, Kubernetes, CI/CD",
+  "contacto": {
+    "email": "eduardo.lobos03@gmail.com",
+    "linkedin": "https://linkedin.com/in/elobosp",
+    "github": "https://github.com/elobosp"
+  },
+  "cv": {
+    "es": "assets/cv/cv-es.pdf",
+    "en": "assets/cv/cv-en.pdf"
+  },
+  "trayectoria": [
+    {
+      "periodo": { "es": "mar. 2024 — hoy", "en": "Mar 2024 — present" },
+      "cargo": { "es": "Ingeniero de Sistemas", "en": "Systems Engineer" },
+      "empresa": "Universidad Católica de Temuco",
+      "resumen": {
+        "es": "Backend en Go, portal de estudiantes (React + PHP), app móvil en React Native, CI/CD con GitLab, diseño de la migración a microservicios en Kubernetes e IA aplicada (visión por computador, modelos predictivos, chatbot con LLM).",
+        "en": "Go backends, student portal (React + PHP), React Native mobile app, GitLab CI/CD, design of the migration to microservices on Kubernetes, and applied AI (computer vision, predictive models, LLM chatbot)."
+      }
+    },
+    {
+      "periodo": { "es": "dic. 2023 — ene. 2024", "en": "Dec 2023 — Jan 2024" },
+      "cargo": { "es": "Analista Desarrollador", "en": "Developer Analyst" },
+      "empresa": "Universidad Católica de Temuco",
+      "resumen": {
+        "es": "Lideré la migración de los robots RPA desde la plataforma propietaria Laiye a Python (Selenium, pandas, openpyxl).",
+        "en": "Led the migration of RPA bots from the proprietary Laiye platform to Python (Selenium, pandas, openpyxl)."
+      }
+    },
+    {
+      "periodo": { "es": "dic. 2022 — ago. 2023", "en": "Dec 2022 — Aug 2023" },
+      "cargo": { "es": "Ingeniero de Desarrollo", "en": "Development Engineer" },
+      "empresa": "Outlier SpA",
+      "resumen": {
+        "es": "Migración de una plataforma de registros de seguridad para la minería y capacitaciones en realidad virtual con Unity.",
+        "en": "Migrated a safety-records platform for the mining industry and built virtual reality training with Unity."
+      }
+    },
+    {
+      "periodo": { "es": "ene. 2021 — sep. 2021", "en": "Jan 2021 — Sep 2021" },
+      "cargo": { "es": "Asistente de Investigación", "en": "Research Assistant" },
+      "empresa": "Universidad Católica de Temuco",
+      "resumen": {
+        "es": "Reescribí en Go el backend de QueVotan.cl, optimicé la base de datos y lo desplegué con Docker Compose. Derivó en mi tesis y en una publicación IEEE.",
+        "en": "Rewrote the QueVotan.cl backend in Go, optimized its database and deployed it with Docker Compose. It led to my thesis and an IEEE publication."
+      }
+    }
+  ],
+  "stack": [
+    { "grupo": { "es": "Lenguajes", "en": "Languages" }, "items": ["Go", "Python", "TypeScript", "JavaScript", "PHP", "C++", "SQL"] },
+    { "grupo": { "es": "Backend", "en": "Backend" }, "items": ["REST", "gRPC", "GraphQL", "Gin", "Lumen/Laravel", "JWT", "OAuth 2.0 / OIDC", "Keycloak", "WebAuthn"] },
+    { "grupo": { "es": "Frontend y móvil", "en": "Frontend & mobile" }, "items": ["React", "React Native (Expo)", "Vite", "PWA", "Module Federation"] },
+    { "grupo": { "es": "DevOps", "en": "DevOps" }, "items": ["Docker", "Docker Compose", "Kubernetes", "Helm", "GitLab CI/CD", "GitHub Actions", "Nginx", "Git"] },
+    { "grupo": { "es": "Datos e IA", "en": "Data & AI" }, "items": ["SQL Server", "PostgreSQL", "LightGBM", "OpenCV", "YOLOv8", "Ollama", "RAG", "n8n"] }
+  ],
+  "formacion": {
+    "titulo": { "es": "Ingeniería Civil en Informática, mención Tecnologías de Información", "en": "Computer Engineering (six-year professional degree), Information Technology track" },
+    "institucion": "Universidad Católica de Temuco",
+    "periodo": "2018 — 2024",
+    "tesis": {
+      "es": "Tesis: Actualización de la plataforma QueVotan.cl: visualización y análisis de votaciones parlamentarias en Chile.",
+      "en": "Thesis: Updating the QueVotan.cl platform: visualization and analysis of parliamentary votes in Chile."
+    }
+  },
+  "publicacion": {
+    "cita": "I. Lincolao-Venegas, E. Lobos-Pacheco, P. Mirabal, A. Parra-Riquelme, V. Quiroz-Valenzuela, J. Rojas-Mora. “An ad-hoc algorithm to find the minimum winning coalition”. 42nd IEEE International Conference of the Chilean Computer Science Society (SCCC), 2023.",
+    "doi": "10.1109/SCCC59417.2023.10315747"
+  }
+}

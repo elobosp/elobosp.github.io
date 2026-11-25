@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "proyectos": "Proyectos",
+    "trayectoria": "Trayectoria",
+    "stack": "Stack",
+    "contacto": "Contacto",
+    "idioma": "Idioma"
+  },
+  "hero": {
+    "disponible": "Abierto a oportunidades remotas",
+    "intro": "Construyo backends en Go y los llevo a producción con Docker, Kubernetes y CI/CD. También desarrollo frontends en React y apps en React Native, e integro IA cuando aporta.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "deploy": "último deploy"
+  },
+  "pipeline": {
+    "commit": "commit",
+    "build": "build",
+    "test": "test",
+    "deploy": "deploy",
+    "aria": "Pipeline de despliegue de este sitio"
+  },
+  "proyectos": {
+    "titulo": "Proyectos",
+    "comando": "kubectl get proyectos",
+    "ayuda": "Selecciona una fila para ver la arquitectura y el detalle.",
+    "nota": "El código de los proyectos institucionales es privado; aquí describo el problema, la solución y su arquitectura.",
+    "filtro": {
+      "etiqueta": "Filtrar por perfil",
+      "todos": "Todos",
+      "backend": "Backend",
+      "fullstack": "Full-stack",
+      "devops": "DevOps",
+      "ia": "IA"
+    },
+    "col": {
+      "nombre": "NOMBRE",
+      "stack": "STACK",
+      "estado": "ESTADO",
+      "commits": "COMMITS"
+    }
+  },
+  "estado": {
+    "prod": "prod",
+    "lab": "lab",
+    "leyenda": "prod: en producción en un empleador · lab: proyecto personal o experimento"
+  },
+  "proyecto": {
+    "problema": "Problema",
+    "solucion": "Qué hice",
+    "resultado": "Resultado"
+  },
+  "trayectoria": {
+    "titulo": "Trayectoria"
+  },
+  "stack": {
+    "titulo": "Stack"
+  },
+  "formacion": {
+    "titulo": "Formación",
+    "publicacion": "Publicación"
+  },
+  "contacto": {
+    "titulo": "Contacto",
+    "texto": "¿Tienes un puesto remoto de backend, full-stack o DevOps? Escríbeme."
+  },
+  "cv": {
+    "descargar": "Descargar CV",
+    "soloEspanol": "CV (español)"
+  },
+  "meta": {
+    "title": "Eduardo Lobos · Backend Engineer",
+    "description": "Portafolio de Eduardo Lobos: backend en Go, Kubernetes y CI/CD, full-stack con React y React Native, e IA aplicada. Abierto a oportunidades remotas."
+  },
+  "noscript": "Este sitio necesita JavaScript para mostrar los proyectos. Puedes contactarme por correo, LinkedIn o GitHub."
+}
