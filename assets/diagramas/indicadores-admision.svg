@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 226" role="img" aria-labelledby="t-indicadores-admision">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 226" width="646" height="226" role="img" aria-labelledby="t-indicadores-admision">
   <title id="t-indicadores-admision">Arquitectura: Dashboard de indicadores de admisión</title>
   <defs><marker id="m-indicadores-admision" class="flecha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
-  <line class="arista" x1="169.0" y1="113.0" x2="188.0" y2="113.0" marker-end="url(#m-indicadores-admision)"/>
-  <text class="etiqueta etiqueta--arista" x="178.5" y="108.0" text-anchor="middle">cookie httpOnly</text>
-  <line class="arista" x1="327.5" y1="87.0" x2="379.5" y2="65.0" marker-end="url(#m-indicadores-admision)"/>
-  <line class="arista" x1="344.0" y1="113.0" x2="363.0" y2="113.0" marker-end="url(#m-indicadores-admision)"/>
-  <line class="arista" x1="327.5" y1="139.0" x2="379.5" y2="161.0" marker-end="url(#m-indicadores-admision)"/>
+  <line class="arista" x1="169.0" y1="113.0" x2="245.0" y2="113.0" marker-end="url(#m-indicadores-admision)"/>
+  <text class="etiqueta etiqueta--arista" x="207.0" y="108.0" text-anchor="middle">cookie httpOnly</text>
+  <line class="arista" x1="401.0" y1="88.1" x2="477.0" y2="63.9" marker-end="url(#m-indicadores-admision)"/>
+  <line class="arista" x1="401.0" y1="113.0" x2="477.0" y2="113.0" marker-end="url(#m-indicadores-admision)"/>
+  <line class="arista" x1="401.0" y1="137.9" x2="477.0" y2="162.1" marker-end="url(#m-indicadores-admision)"/>
   <g><rect class="nodo" x="16" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="110" text-anchor="middle">React · Vite PWA</text><text class="etiqueta etiqueta--sec" x="91" y="125" text-anchor="middle">navegador</text></g>
-  <g><rect class="nodo nodo--principal" x="191" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="110" text-anchor="middle">Go · Gin</text><text class="etiqueta etiqueta--sec" x="266" y="125" text-anchor="middle">API + login SSO</text></g>
-  <g><rect class="nodo" x="366" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="36" text-anchor="middle">Keycloak</text><text class="etiqueta etiqueta--sec" x="441" y="51" text-anchor="middle">OIDC · PKCE</text></g>
-  <g><rect class="nodo" x="366" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="110" text-anchor="middle">SQL Server</text><text class="etiqueta etiqueta--sec" x="441" y="125" text-anchor="middle">indicadores</text></g>
-  <g><rect class="nodo" x="366" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="184" text-anchor="middle">BD seguridad</text><text class="etiqueta etiqueta--sec" x="441" y="199" text-anchor="middle">roles</text></g>
+  <g><rect class="nodo nodo--principal" x="248" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="323" y="110" text-anchor="middle">Go · Gin</text><text class="etiqueta etiqueta--sec" x="323" y="125" text-anchor="middle">API + login SSO</text></g>
+  <g><rect class="nodo" x="480" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="36" text-anchor="middle">Keycloak</text><text class="etiqueta etiqueta--sec" x="555" y="51" text-anchor="middle">OIDC · PKCE</text></g>
+  <g><rect class="nodo" x="480" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="110" text-anchor="middle">SQL Server</text><text class="etiqueta etiqueta--sec" x="555" y="125" text-anchor="middle">indicadores</text></g>
+  <g><rect class="nodo" x="480" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="184" text-anchor="middle">BD seguridad</text><text class="etiqueta etiqueta--sec" x="555" y="199" text-anchor="middle">roles</text></g>
 </svg>

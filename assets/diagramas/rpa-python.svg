@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 226" role="img" aria-labelledby="t-rpa-python">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 226" width="646" height="226" role="img" aria-labelledby="t-rpa-python">
   <title id="t-rpa-python">Arquitectura: Robots RPA en Python</title>
   <defs><marker id="m-rpa-python" class="flecha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
-  <line class="arista arista--sec" x1="169.0" y1="113.0" x2="188.0" y2="113.0" marker-end="url(#m-rpa-python)"/>
-  <text class="etiqueta etiqueta--arista" x="178.5" y="108.0" text-anchor="middle">migración</text>
-  <line class="arista" x1="327.5" y1="87.0" x2="379.5" y2="65.0" marker-end="url(#m-rpa-python)"/>
-  <line class="arista" x1="327.5" y1="139.0" x2="379.5" y2="161.0" marker-end="url(#m-rpa-python)"/>
+  <line class="arista arista--sec" x1="169.0" y1="113.0" x2="245.0" y2="113.0" marker-end="url(#m-rpa-python)"/>
+  <text class="etiqueta etiqueta--arista" x="207.0" y="108.0" text-anchor="middle">migración</text>
+  <line class="arista" x1="401.0" y1="88.1" x2="477.0" y2="63.9" marker-end="url(#m-rpa-python)"/>
+  <line class="arista" x1="401.0" y1="137.9" x2="477.0" y2="162.1" marker-end="url(#m-rpa-python)"/>
   <g><rect class="nodo" x="16" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="110" text-anchor="middle">Laiye</text><text class="etiqueta etiqueta--sec" x="91" y="125" text-anchor="middle">plataforma anterior</text></g>
-  <g><rect class="nodo nodo--principal" x="191" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="110" text-anchor="middle">Robots Python</text><text class="etiqueta etiqueta--sec" x="266" y="125" text-anchor="middle">15 procesos</text></g>
-  <g><rect class="nodo" x="366" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="36" text-anchor="middle">Selenium</text><text class="etiqueta etiqueta--sec" x="441" y="51" text-anchor="middle">portales web</text></g>
-  <g><rect class="nodo" x="366" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="184" text-anchor="middle">pandas · openpyxl</text><text class="etiqueta etiqueta--sec" x="441" y="199" text-anchor="middle">planillas Excel</text></g>
+  <g><rect class="nodo nodo--principal" x="248" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="323" y="110" text-anchor="middle">Robots Python</text><text class="etiqueta etiqueta--sec" x="323" y="125" text-anchor="middle">15 procesos</text></g>
+  <g><rect class="nodo" x="480" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="36" text-anchor="middle">Selenium</text><text class="etiqueta etiqueta--sec" x="555" y="51" text-anchor="middle">portales web</text></g>
+  <g><rect class="nodo" x="480" y="164" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="184" text-anchor="middle">pandas · openpyxl</text><text class="etiqueta etiqueta--sec" x="555" y="199" text-anchor="middle">planillas Excel</text></g>
 </svg>

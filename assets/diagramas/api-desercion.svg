@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 152" role="img" aria-labelledby="t-api-desercion">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 152" width="646" height="152" role="img" aria-labelledby="t-api-desercion">
   <title id="t-api-desercion">Arquitectura: Predicción de deserción estudiantil</title>
   <defs><marker id="m-api-desercion" class="flecha" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>
-  <line class="arista" x1="169.0" y1="39.0" x2="188.0" y2="39.0" marker-end="url(#m-api-desercion)"/>
-  <text class="etiqueta etiqueta--arista" x="178.5" y="34.0" text-anchor="middle">JSON</text>
-  <line class="arista" x1="344.0" y1="39.0" x2="363.0" y2="39.0" marker-end="url(#m-api-desercion)"/>
-  <text class="etiqueta etiqueta--arista" x="353.5" y="34.0" text-anchor="middle">predice</text>
-  <line class="arista arista--sec" x1="441.0" y1="87.0" x2="441.0" y2="65.0" marker-end="url(#m-api-desercion)"/>
-  <text class="etiqueta etiqueta--arista" x="441.0" y="71.0" text-anchor="middle">entrena</text>
+  <line class="arista" x1="169.0" y1="39.0" x2="245.0" y2="39.0" marker-end="url(#m-api-desercion)"/>
+  <text class="etiqueta etiqueta--arista" x="207.0" y="34.0" text-anchor="middle">JSON</text>
+  <line class="arista" x1="401.0" y1="39.0" x2="477.0" y2="39.0" marker-end="url(#m-api-desercion)"/>
+  <text class="etiqueta etiqueta--arista" x="439.0" y="34.0" text-anchor="middle">predice</text>
+  <line class="arista arista--sec" x1="555.0" y1="87.0" x2="555.0" y2="65.0" marker-end="url(#m-api-desercion)"/>
+  <text class="etiqueta etiqueta--arista" x="555.0" y="71.0" text-anchor="middle">entrena</text>
   <g><rect class="nodo" x="16" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="91" y="36" text-anchor="middle">Sistema académico</text><text class="etiqueta etiqueta--sec" x="91" y="51" text-anchor="middle">estado del alumno</text></g>
-  <g><rect class="nodo nodo--principal" x="191" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="266" y="36" text-anchor="middle">API Go</text><text class="etiqueta etiqueta--sec" x="266" y="51" text-anchor="middle">individual · lote</text></g>
-  <g><rect class="nodo nodo--principal" x="366" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="36" text-anchor="middle">LightGBM</text><text class="etiqueta etiqueta--sec" x="441" y="51" text-anchor="middle">modelo</text></g>
-  <g><rect class="nodo" x="366" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="441" y="110" text-anchor="middle">Datos históricos</text><text class="etiqueta etiqueta--sec" x="441" y="125" text-anchor="middle">alumno × semestre</text></g>
+  <g><rect class="nodo nodo--principal" x="248" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="323" y="36" text-anchor="middle">API Go</text><text class="etiqueta etiqueta--sec" x="323" y="51" text-anchor="middle">individual · lote</text></g>
+  <g><rect class="nodo nodo--principal" x="480" y="16" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="36" text-anchor="middle">LightGBM</text><text class="etiqueta etiqueta--sec" x="555" y="51" text-anchor="middle">modelo</text></g>
+  <g><rect class="nodo" x="480" y="90" width="150" height="46" rx="8"/><text class="etiqueta" x="555" y="110" text-anchor="middle">Datos históricos</text><text class="etiqueta etiqueta--sec" x="555" y="125" text-anchor="middle">alumno × semestre</text></g>
 </svg>
