@@ -4,3 +4,5 @@ docs/
 graphify-out/
 latex/
 node_modules/
+lh-*.json
+_site/

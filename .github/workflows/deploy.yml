@@ -1,0 +1,98 @@
+name: CI/CD · GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: test · validar · construir
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Tests (datos, render, i18n, privacidad, diagramas)
+        run: npm test
+
+      - name: Validar HTML
+        run: npx --yes html-validate@11 index.html
+
+      - name: Armar _site
+        run: |
+          mkdir -p _site
+          cp -r index.html css js data assets _site/
+          printf '{"sha":"%s","fecha":"%s"}\n' "${GITHUB_SHA::7}" "$(date -u +%F)" > _site/build.json
+          cat _site/build.json
+
+      - name: Revisar enlaces
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --root-dir ${{ github.workspace }}/_site
+            --exclude '^https://(www\.)?linkedin\.com'
+            --exclude '^mailto:'
+            --accept '200,429'
+            '_site/**/*.html'
+          fail: true
+
+      # lighthouse fijado en 13.5.0: la 13.6 depende de un @sentry/node cuyo tarball no está en npm.
+      - name: Lighthouse (umbral 0.9 en todas las categorías)
+        run: |
+          python3 -m http.server 4180 --directory _site > /dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://localhost:4180/ > /dev/null && break; sleep 1; done
+          for preset in desktop mobile; do
+            flag=""; [ "$preset" = desktop ] && flag="--preset=desktop"
+            npx --yes lighthouse@13.5.0 http://localhost:4180/ $flag \
+              --chrome-flags="--headless=new --no-sandbox" --quiet \
+              --output=json --output-path="lh-$preset.json"
+            node -e '
+              const r = require("./lh-" + process.argv[1] + ".json");
+              let ok = true;
+              for (const k of ["performance", "accessibility", "best-practices", "seo"]) {
+                const s = r.categories[k].score;
+                console.log(process.argv[1], k, s);
+                if (s < 0.9) ok = false;
+              }
+              process.exit(ok ? 0 : 1);
+            ' "$preset"
+          done
+
+      - name: Subir artefacto de Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    name: deploy
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configurar Pages
+        uses: actions/configure-pages@v6
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v5
