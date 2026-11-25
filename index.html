@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
   <a class="saltar" href="#proyectos">Ir a proyectos</a>
 
   <header class="barra">
-    <a class="iniciales" href="#inicio" aria-label="Inicio">EL</a>
+    <a class="iniciales" href="#inicio" title="Eduardo Lobos">EL</a>
     <nav aria-label="Secciones">
       <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
       <a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a>
@@ -41,7 +41,7 @@
       <p class="disponible"><span class="punto" aria-hidden="true"></span><span data-i18n="hero.disponible">Abierto a oportunidades remotas</span></p>
       <h1 class="nombre-hero">Eduardo Lobos</h1>
       <p class="titular" data-perfil="titular">Backend Engineer · Go, Kubernetes, CI/CD</p>
-      <p class="intro" data-i18n="hero.intro"></p>
+      <p class="intro" data-i18n="hero.intro">Construyo backends en Go y los llevo a producción con Docker, Kubernetes y CI/CD. También desarrollo frontends en React y apps en React Native, e integro IA cuando aporta.</p>
       <ol class="pipeline" aria-label="Pipeline de despliegue de este sitio" data-i18n-aria="pipeline.aria">
         <li class="etapa" data-etapa="commit"><span class="icono" aria-hidden="true"></span><span data-i18n="pipeline.commit">commit</span></li>
         <li class="etapa" data-etapa="build"><span class="icono" aria-hidden="true"></span><span data-i18n="pipeline.build">build</span></li>
@@ -50,7 +50,7 @@
       </ol>
       <p class="deploy-info" hidden></p>
       <div class="acciones">
-        <a class="boton boton--oro" id="cv" hidden download></a>
+        <a class="boton boton--oro" id="cv" href="assets/cv/cv-es.pdf" hidden download>Descargar CV</a>
         <a class="boton" id="enlace-github" href="https://github.com/elobosp" rel="noopener">GitHub</a>
         <a class="boton" id="enlace-linkedin" href="https://linkedin.com/in/elobosp" rel="noopener">LinkedIn</a>
       </div>
@@ -58,7 +58,7 @@
 
     <section id="proyectos" aria-labelledby="titulo-proyectos">
       <h2 id="titulo-proyectos" data-i18n="proyectos.titulo">Proyectos</h2>
-      <p class="nota" data-i18n="proyectos.nota"></p>
+      <p class="nota" data-i18n="proyectos.nota">El código de los proyectos institucionales es privado; aquí describo el problema, la solución y su arquitectura.</p>
       <div class="filtros" role="group" data-i18n-aria="proyectos.filtro.etiqueta"></div>
       <p class="comando"><span class="prompt" aria-hidden="true">$</span> <span data-i18n="proyectos.comando">kubectl get proyectos</span></p>
       <div class="tabla-envoltura">
@@ -74,7 +74,7 @@
           <tbody id="filas"></tbody>
         </table>
       </div>
-      <p class="ayuda"><span data-i18n="proyectos.ayuda"></span> <span class="leyenda" data-i18n="estado.leyenda"></span></p>
+      <p class="ayuda"><span data-i18n="proyectos.ayuda">Selecciona una fila para ver la arquitectura y el detalle.</span> <span class="leyenda" data-i18n="estado.leyenda">prod: en producción en un empleador · lab: proyecto personal o experimento</span></p>
     </section>
 
     <section id="trayectoria" aria-labelledby="titulo-trayectoria">
@@ -94,7 +94,7 @@
 
     <section id="contacto" aria-labelledby="titulo-contacto">
       <h2 id="titulo-contacto" data-i18n="contacto.titulo">Contacto</h2>
-      <p data-i18n="contacto.texto"></p>
+      <p data-i18n="contacto.texto">¿Tienes un puesto remoto de backend, full-stack o DevOps? Escríbeme.</p>
       <ul class="contacto">
         <li><a href="mailto:eduardo.lobos03@gmail.com">eduardo.lobos03@gmail.com</a></li>
         <li><a href="https://linkedin.com/in/elobosp" rel="noopener">linkedin.com/in/elobosp</a></li>

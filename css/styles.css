@@ -99,7 +99,9 @@ h3 { margin: 0; font-size: 1.05rem; }
 .etapa.is-done { color: var(--ok); border-color: var(--ok-border); background: rgba(46, 160, 67, .1); }
 .etapa.is-done .icono::before { content: "✓"; }
 .etapa.is-done + .etapa::before, .etapa + .etapa.is-done::before { background: var(--ok-border); }
-.deploy-info { font: .78rem var(--mono); color: var(--muted); margin: 0 0 24px; }
+.deploy-info { font: .78rem var(--mono); color: var(--muted); margin: 0 0 24px; min-height: 1.3em; }
+/* oculto pero ocupando su línea: aparecer después de cargar no desplaza la página (CLS) */
+.deploy-info[hidden] { display: block; visibility: hidden; }
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .boton {
   display: inline-block; padding: 10px 18px; border-radius: 10px;
@@ -111,6 +113,7 @@ h3 { margin: 0; font-size: 1.05rem; }
 
 /* ---------- proyectos ---------- */
 .nota { color: var(--muted); margin: -8px 0 20px; font-size: .95rem; }
+.filtros { min-height: 34px; }
 .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .filtros button { border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; }
 .filtros button:hover { color: var(--text); }
@@ -126,10 +129,11 @@ h3 { margin: 0; font-size: 1.05rem; }
 .tabla-proyectos td { padding: 10px 14px; vertical-align: top; }
 tr.proyecto { cursor: pointer; border-top: 1px solid var(--border); transition: background .2s; }
 tr.proyecto:first-child { border-top: 0; }
-tr.proyecto:hover, tr.proyecto[aria-expanded="true"] { background: rgba(167, 139, 250, .07); }
-tr.proyecto:focus-visible { outline-offset: -2px; }
+tr.proyecto:hover, tr.proyecto.abierto { background: rgba(167, 139, 250, .07); }
+.fila-boton { all: unset; display: block; cursor: pointer; width: 100%; }
+.fila-boton:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; border-radius: 4px; }
 .caret { display: inline-block; color: var(--muted); transition: transform .2s; }
-tr.proyecto[aria-expanded="true"] .caret { transform: rotate(90deg); color: var(--violeta); }
+tr.proyecto.abierto .caret { transform: rotate(90deg); color: var(--violeta); }
 .nombre { color: var(--vino); font-weight: 600; }
 .titulo { display: block; font: .8rem var(--sans); color: var(--muted); margin-left: 1.1em; }
 .col-stack { color: var(--muted); }

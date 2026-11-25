@@ -55,8 +55,13 @@ test('renderRow: estado prod y commits null → —', () => {
   assert.match(html, /estado--prod/);
   assert.match(html, />—</);
   assert.match(html, /data-slug="demo"/);
-  assert.match(html, /aria-expanded="false"/);
-  assert.match(html, /aria-controls="det-demo"/);
+});
+
+test('renderRow: el control accesible es un button, no el tr', () => {
+  const html = renderRow(proyecto(), 'es', dicts);
+  assert.match(html, /<button type="button" class="fila-boton" aria-expanded="false" aria-controls="det-demo">/);
+  const tr = html.match(/<tr[^>]*>/)[0];
+  assert.doesNotMatch(tr, /aria-expanded|tabindex/);
 });
 
 test('renderRow: stack unido con ·', () => {

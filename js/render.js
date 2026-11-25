@@ -25,9 +25,11 @@ export function filterProjects(projects, perfil) {
 
 export function renderRow(p, lang, dicts) {
   const slug = escapeHtml(p.slug);
-  return `<tr class="proyecto" data-slug="${slug}" tabindex="0" aria-expanded="false" aria-controls="det-${slug}">`
-    + `<td class="col-nombre"><span class="caret" aria-hidden="true">▸</span> <span class="nombre">${escapeHtml(p.nombre)}</span>`
-    + `<span class="titulo">${txt(p.titulo, lang)}</span></td>`
+  return `<tr class="proyecto" data-slug="${slug}">`
+    + '<td class="col-nombre">'
+    + `<button type="button" class="fila-boton" aria-expanded="false" aria-controls="det-${slug}">`
+    + `<span class="caret" aria-hidden="true">▸</span> <span class="nombre">${escapeHtml(p.nombre)}</span>`
+    + `<span class="titulo">${txt(p.titulo, lang)}</span></button></td>`
     + `<td class="col-stack">${escapeHtml(p.stack.join(' · '))}</td>`
     + `<td class="col-estado"><span class="estado estado--${escapeHtml(p.estado)}">● ${escapeHtml(t(dicts, lang, `estado.${p.estado}`))}</span></td>`
     + `<td class="col-commits">${p.commits ?? '—'}</td>`

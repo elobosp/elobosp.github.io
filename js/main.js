@@ -97,9 +97,15 @@ function renderProyectos() {
     const visible = visibles.has(p.slug);
     const abierto = visible && estado.abiertos.has(p.slug);
     fila.hidden = !visible;
-    fila.setAttribute('aria-expanded', String(abierto));
+    marcarFila(fila, abierto);
     detalle.hidden = !abierto;
   }
+}
+
+/** Estado abierto/cerrado: aria-expanded en el botón (accesible) y clase en la fila (estilo). */
+function marcarFila(fila, abierto) {
+  fila.classList.toggle('abierto', abierto);
+  fila.querySelector('.fila-boton').setAttribute('aria-expanded', String(abierto));
 }
 
 function renderFormacion() {
@@ -156,7 +162,7 @@ async function alternarFila(slug) {
   const abierto = estado.abiertos.has(slug);
   detalle.hidden = !abierto;
   $(`#det-${slug}`).replaceWith(detalle);
-  fila.setAttribute('aria-expanded', String(abierto));
+  marcarFila(fila, abierto);
 }
 
 function conectarEventos() {
@@ -172,16 +178,10 @@ function conectarEventos() {
     renderProyectos();
   });
   const filas = $('#filas');
+  // Clic en cualquier parte de la fila; con teclado, Enter/Espacio en el botón disparan este mismo click.
   filas.addEventListener('click', (e) => {
     const fila = e.target.closest('tr.proyecto');
     if (fila) alternarFila(fila.dataset.slug);
-  });
-  filas.addEventListener('keydown', (e) => {
-    const fila = e.target.closest('tr.proyecto');
-    if (fila && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault();
-      alternarFila(fila.dataset.slug);
-    }
   });
 }
 
